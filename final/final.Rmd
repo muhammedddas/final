@@ -25,8 +25,9 @@ urlcolor: blue
 fontsize: 12pt
 biblio-style: apalike
 abstract: |
+ ##ÖZET
 
- Ham veri üzerinde değişkenlerin adlarında yaptığım düzenlemeler ile başladığım analize önce özet istatistik tablosu çıkararak değişkenler hakkında bilgi verdim. Daha sonrasında nüfusun eğitim düzeyini gösteren değişkenler arasında histogram, dağılım ve çizgi grafikleri oluşturdum. Bu grafiklerde eğitim düzeyleri ile yoksulluk ilişkisini ele aldım. Bu ilişkide lise dengi okul veya yükseköğretim mezunu gibi eğitim düzeylerinde yoksul sayısının okur-yazar olmayanlara veya düşük eğitim seviyesinde olanlara göre önemli ölçüde fark olduğunu gözlemledim. Bu gözlemlere göre eğitim seviyesi düşük olanın yoksulluk sayısında yüksek olduğunu ortaya koyuyordu. Bu farklar eğitim düzeyleri arttıkça daha da artmaktadır.  En sonunda grafiklerden  gözlemleyebildiğimiz eğitim ve yoksulluk arasındaki ilişkinin yönünü net olarak ortaya koymak için değişkenler arasından okur-yazar olmayan ile yükseköğretim eğitim düzeyindekilerinin yoksul sayıları arasında regresyon analizi yapmaya çalıştım. Bu analiz sonucu denklem katsayısına göre bu değişkenler arasında ters yönlü bir ilişki olduğu belirlenmiş oldu. Yani eğitim düzeyi arttıkça yoksul sayısının düştüğünü, araştırma konumuza dair verdiğimiz sorunun cevabını ulaştığımızı söyleyebilirim. 
+  Ham veri üzerinde değişkenlerin adlarında yaptığım düzenlemeler ile başladığım analize önce özet istatistik tablosu çıkararak değişkenler hakkında bilgi verdim. Daha sonrasında nüfusun eğitim düzeyini gösteren değişkenler arasında histogram, dağılım ve çizgi grafikleri oluşturdum. Bu grafiklerde eğitim düzeyleri ile yoksulluk ilişkisini ele aldım. Bu ilişkide lise dengi okul veya yükseköğretim mezunu gibi eğitim düzeylerinde yoksul sayısının okur-yazar olmayanlara veya düşük eğitim seviyesinde olanlara göre önemli ölçüde fark olduğunu gözlemledim. Bu gözlemlere göre eğitim seviyesi düşük olanın yoksulluk sayısında yüksek olduğunu ortaya koyuyordu. Bu farklar eğitim düzeyleri arttıkça daha da artmaktadır.  En sonunda grafiklerden  gözlemleyebildiğimiz eğitim ve yoksulluk arasındaki ilişkinin yönünü net olarak ortaya koymak için değişkenler arasından okur-yazar olmayan ile yükseköğretim eğitim düzeyindekilerinin yoksul sayıları arasında regresyon analizi yapmaya çalıştım. Bu analiz sonucu denklem katsayısına göre bu değişkenler arasında ters yönlü bir ilişki olduğu belirlenmiş oldu. Yani eğitim düzeyi arttıkça yoksul sayısının düştüğünü, araştırma konumuza dair verdiğimiz sorunun cevabını ulaştığımızı söyleyebilirim. 
   
 ---
 ```{r setup, include=FALSE}
@@ -218,7 +219,7 @@ print(equation)
 
 
 # Sonuç
-Sonuç olarak projeyi ve yapılan çalışmaları özetlersek eğer başlangıçta sorduğumuz ve araştırmaya çalıştığım yoksulluk ile eğitim seviyesi arasındaki ilişkinin ne tür bir ilişki olduğu sorusuna bu ilişki arasında ters yönlü bir ilişki olduğu sonucuna vardığımı söyleyebilirim. Yani eğitim seviyesi arttıkça yoksulluk riskinin azaldığını söyleyebilirim. Bu çalışmayı desteklemek için Avrupa ülkeleri içinde kıyaslayıp, Avrupa ülkelerindeki sonuçlar ile birlikte bir karşılaştırma yaparak geliştirebiliriz. 
+Sonuç olarak projeyi, veriyi, grafikleri, tabloları, diagramları, özet istatistikleri ve yapılan diğer çalışmaları özetlersek eğer başlangıçta sorduğumuz ve araştırmaya çalıştığım yoksulluk ile eğitim seviyesi arasındaki ilişkinin ne tür bir ilişki olduğu sorusuna,  analizlere dayanarak bu ilişkinin ters yönlü bir ilişki olduğu sonucuna vardığımı söyleyebilirim. Yani eğitim seviyesi arttıkça yoksulluk riskinin azaldığını söyleyebilirim. Bu çalışmayı desteklemek için Avrupa ülkeleri için de kıyaslayıp, Avrupa ülkelerindeki sonuçlar ile birlikte bir karşılaştırma yaparak geliştirebiliriz. 
 
 
 \newpage
