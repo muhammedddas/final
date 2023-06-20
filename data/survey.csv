@@ -1,13 +1,14 @@
-"years,15 age +  Risk of poverty,number of poors {thousand person},""  "
-"Illiterate"","" "
-"Literate with no degree"",Less than          high school,"" "
-"High school or equivalent"",""               "
-"Higher           education       "",poverty rate  %,""                       "
-"Illiterate"","" "
-"Literate with no degree"","" "
-"Less than          high school"","" "
-"High school or equivalent"",""                       "
-"Higher           education       "","
+years,15 age +  Risk of poverty,number of poors {thousand person},"  
+Illiterate"," 
+Literate with no degree",Less than          high school," 
+High school or equivalent","               
+Higher           education       ",poverty rate  %,"                       
+Illiterate"," 
+Literate with no degree"," 
+Less than          high school"," 
+High school or equivalent","                       
+Higher           education       ",
+
 2006,%50 - 50%,,  1969,  1004,  3783,   463,   24,,33,28,14,5,1
 ,%60 - 60%,,  2486,  1327,  5605,   825,   48,,41,37,21,10,1
 2007,%50 - 50%,,  1842,   919,  3392,   486,   31,,31,25,12,5,1
