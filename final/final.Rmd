@@ -1,7 +1,7 @@
 ---
-title: "Çalışmanızın Başlığı"
+title: "Türkiye'de Eğitim ve Yoksulluk ilişkisi"
 author: 
-  - İsim Soyisim[^1]
+  - Muhammed Daş[^1]
 bibliography: ../bibliography/biblio.bib
 csl: ../csl/apa-tr.csl
 header-includes:
@@ -25,7 +25,9 @@ urlcolor: blue
 fontsize: 12pt
 biblio-style: apalike
 abstract: |
-  Bu bölümde çalışmanızın özetini yazınız.
+
+ Ham veri üzerinde değişkenlerin adlarında yaptığım düzenlemeler ile başladığım analize önce özet istatistik tablosu çıkararak değişkenler hakkında bilgi verdim. Daha sonrasında nüfusun eğitim düzeyini gösteren değişkenler arasında histogram, dağılım ve çizgi grafikleri oluşturdum. Bu grafiklerde eğitim düzeyleri ile yoksulluk ilişkisini ele aldım. Bu ilişkide lise dengi okul veya yükseköğretim mezunu gibi eğitim düzeylerinde yoksul sayısının okur-yazar olmayanlara veya düşük eğitim seviyesinde olanlara göre önemli ölçüde fark olduğunu gözlemledim. Bu gözlemlere göre eğitim seviyesi düşük olanın yoksulluk sayısında yüksek olduğunu ortaya koyuyordu. Bu farklar eğitim düzeyleri arttıkça daha da artmaktadır.  En sonunda grafiklerden  gözlemleyebildiğimiz eğitim ve yoksulluk arasındaki ilişkinin yönünü net olarak ortaya koymak için değişkenler arasından okur-yazar olmayan ile yükseköğretim eğitim düzeyindekilerinin yoksul sayıları arasında regresyon analizi yapmaya çalıştım. Bu analiz sonucu denklem katsayısına göre bu değişkenler arasında ters yönlü bir ilişki olduğu belirlenmiş oldu. Yani eğitim düzeyi arttıkça yoksul sayısının düştüğünü, araştırma konumuza dair verdiğimiz sorunun cevabını ulaştığımızı söyleyebilirim. 
+  
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
@@ -34,92 +36,184 @@ knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FAL
 <!-- ======================================================================= -->
 <!-- ============================== NOTLAR ================================= -->
 <!-- ======================================================================= -->
-[^1]: Öğrenci Numarası, [Github Repo](https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ)
+[^1]: 20080270, [Github Repo](https://github.com/muhammedddas/deneme.git/muhammedddas/final)
 
-# Final Hakkında Önemli Bilgiler
 
-\colorbox{BurntOrange}{GITHUB REPO BAĞLANTINIZI BU DOSYANIN 37. SATIRINA YAZINIZ!}
-
-**Proje gönderimi, Github repo linki ile birlikte ekampus sistemine bir zip dosyası yüklenerek yapılacaktır. Sisteme zip dosyası yüklemezseniz ve Github repo linki vermezseniz ara sınav ve final sınavlarına girmemiş sayılırsınız.**
-
-**Proje klasörünüzü sıkıştırdıktan sonra (`OgrenciNumarasi.zip` dosyası) 9 Haziran 2023 23:59'a kadar *ekampus.ankara.edu.tr* adresine yüklemeniz gerekmektedir.**
-
-\colorbox{WildStrawberry}{Daha fazla bilgi için proje klasöründeki README.md dosyasını okuyunuz.}
 
 # Giriş
-Bu taslak size proje ödevinizi yazarken yardımcı olması amacıyla oluşturulmuştur. Ödevlerinizde, makalelerinizde, sunumlarınızda ve projelerinizde kullandığınız tüm bilgi kaynaklarına atıfta bulunmalısınız. Alıntı ve gönderme yapmak okuyuculara çalışmanızda kullandığınız/başvurduğunuz  kaynaklara ulaşma imkanı sağlar. **Her ne kadar kendi sözlerinizi kullanıyor olsanız da, başkalarına ait fikirleri çalışmanızda aktarıyorsanız bu fikirlerin kaynağını belgelemek zorundasınız. Aksi takdirde akademik intihal yapmış olursunuz.** Yazım konusunda @aydinonat:2007'ye başvurabilirsiniz. 
-
-
-Proje ödevinizde yer alan başlıkların bu metinde yer alan başlıkları kesinlikle içermesi gerekmektedir. Burada kullanılan başlıklar haricinde farklı alt başlıklar da kullanabilirsiniz. Projenizi yazarken bu dosyayı taslak olarak kullanıp içeriğini projenize uyarlayınız.
-
+Tüm Dünya’da olduğu gibi Türkiye’de de yoksulluk başlıca sorunlardandır. Bununla beraber son yıllarda hızla artan yoksulluk ile birlikte hem ulusal hem de uluslararası düzeyde yoksulluğu önlemek amacıyla çeşitli politikalar uygulanmaktadır. Bunların en başında gösterebileceğimiz eğitim politikaları yer  almaktadır.(@alpaydin2008turkiye) .Bu yüzden proje önerimin araştırma konusu olarak da Türkiye’de eğitim ve yoksulluk arasında ne tür bir ilişki olduğunu incelemeyi seçtim. Proje önerimin veri setini Türkiye İstatistik Kurumu’nun web sitesinden elde ettim. Veri setinde yoksul sayısı ve yoksulluk oranı başlıkları altında Türkiye’de nüfusun eğitim düzeyleri ve okur-yazar olma durumları gibi değişkenler bulunmaktadır. Bununla birlikte yoksulluk riskleri de veri setinde yer almaktadır. Bu veriler 2006-2021 yılları arası incelenmiş olup 50 gözleme dayanmaktadır.
 ## Çalışmanın Amacı
-Bu bölümde yaptığınız çalışmanın amacından ve öneminden birkaç paragraf ile bahsediniz.
-
+ Çalışma, Türkiye’de yoksulluğun ve eğitimin birbirleri arasındaki ilişkisini, bu ilişkinin ne tür bir ilişki olduğunu ortaya koymayı ve analiz edebilmeyi konu edinmiştir.
+   
+   Yoksulluk ve eğitim üzerine birçok çalışma bulunmaktadır. Bu çalışma, bu konu ile ilgili yayınlanmış makaleleri, kitapları, grafikleri ve diğer verileri de inceleyip analize dahil edebilmeyi hedeflemektedir. Bununla birlikte Türkiye gibi gelişmekte olan ülkeleri ve diğer Avrupa ülkelerini de inceleyip veri setinin ortaya koymuş olduğu eğitimin yoksulluğu azaltmadaki etkin rolünü gösterebilmek ve desteklemektir. Bunun sonucunda konu ile ilgili bulunan veriler ışığında bu ilişkiyi incelemek ve istatistiksel analiz yapabilmeyi amaçlamaktadır.
 ## Literatür 
 
-Bu bölümde konu ile ilgili olarak okuduğunuz makaleleri referans vererek tartışınız. **Her makaleyi ayrı başlık altında tek tek özetlemeyiniz.** Literatür taramasında **en az altı** makaleye atıf yapılması ve bu makalelerden **en az ikisinin İngilizce** olması gerekmektedir.
+Eğitim ve yoksulluk araındaki ilişkiyi incelemeden önce kısaca tanımlarını yapmamız gerekir.Yoksulluk mutlak yoksulluk ve göreli yoksulluk olarak ikiye ayrılır. Mutlak yoksulluk, insan varlığının devamı için gerekli olan yiyecek, içecek ve barınma gibi en temel ihtiyaçlarının karşılanamaması durumudur. Göreli yoksulluk ise, insanların temel ihtiyaçlarını karşılayabilmesine rağmen kişisel kaynaklarının yetersizliği nedeniyle toplumun genel refah düzeyinin altında kalması durumudur. Eğitim, her ne kadar görüş birliğine varılan tek bir tanımı olmasa da eğitimi genel olarak, kültürün genç kuşaklara aktarılması ve toplumun varlığını sürdürebilmesi için gerekli sosyal değişimleri yapabilecek yaratıcı kişilerin yetiştirilmesi olarak tanımlamak mümkündür[@ccokgezen2015gelicsmekte].
+  
+   Literatür incelendiğinde eğitimin yoksulluk üzerinde dramatik bir etkiye sahip olduğu görülmektedir(@bilenkisi2015impact)     
+Yoksulluğa sebep olan birçok faktör mevcuttur. Bunlar arasında ön plana çıkanlar ise; ekonomik, işsizlik, göç, cinsiyet ve de eğitimdir. Yoksulluk olgusu tüm yönleriyle incelendiğinde, en önemli nedenin eğitimden kaynaklandığı söylenebilir. Bu bağlamda eğitimin ekonomi ve işsizlikle doğrudan ilişkili olduğu ifade edilebilir.Bu bağlamda söz konusu bireylerin yoksulluğun kısır döngüsüne girmelerine engel olma noktasında alınacak tedbirler ve uygulanacak politikalar hayati önem taşımaktadır. Yoksulluğun nesilden nesille bir miras olarak bırakılmamasın tek yolu ise eğitim seviyesinin yükseltilmesinden geçmektedir [@ocalguncel]
+Öte yandan eğitim, insanların ekonomiye ve topluma katılma becerileri kazanmalarına yardımcı olur.Bulguları göz önüne alındığında, eğitim özünde geliri eşit dağıtmak için bir mihenk taşıdır ve yoksullara ekonomik büyümeden daha fazla yararlanma fırsatı sağlar.Bu nedenle eğitim politikaları, örgün ve yaygın eğitime katılımı artırmaya çalışırken, yoksullukla mücadelede önemli bir rol üstlenmeyi hedeflemeli (@bilenkisi2015impact)
+
+  Sonuç olarak, yoksulluk ve eğitim birbiriyle ters orantılıdır.
+Aynı zamanda eğitimden yoksulluğa doğru ters nedensellik olabileceği gibi, yoksulluktan eğitime doğru da eşit derecede nedensellik olabilir. Örneğin, eğitime yapılan yatırım, insanların üretkenliğinin yanı sıra ücretleri veya geliri artırarak yoksulluğu azaltır. Ayrıca eğitim, insanların daha etkin üretim yapma kapasitelerini geliştiren bazı gerekli becerileri edinmelerini sağlar. Öte yandan yoksulluk, öğrencilere sağlanan kaynakları etkileyerek eğitimin kalitesini ve eğitime eşit erişimi kısıtlamaktadır[@citak2020causal]
+
+  Yoksulluk nedeniyle bireylerin yetersiz eğitim alması bir yandan yoksulluğu devam ettirici bir etki yaratırken; bir diğer yandan bu bireylerin topluma katkılarının da düşük düzeyde kalmasına neden olarak ülkenin kalkınmasını olumsuz yönde etkilemektedir. Bu nedenle yoksullukla mücadelede eğitim konusu sosyal politika alanında ve ekonomik kalkınmada önemli bir unsuru teşkil etmektedir[@erikli2016gencc]
 
 # Veri 
-Bu bölümde çalışmanızda kullandığınız veri setinin kaynağını, ham veri üzerinde herhangi bir işlem yaptıysanız bu işlemleri ve veri seti ile ilgili özet istatistikleri tartışınız. Bu bölümde tüm değişkenlere ait özet istatistikleri (ortalama, standart sapma, minimum, maksimum, vb. değerleri) içeren bir tablo (Tablo \ref{tab:ozet}) olması zorunludur. Tablolarınıza gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız. [@perkins:1991]
+   Veri setimi TÜİK’in Gelir ve Yaşam Koşulları adlı araştırma çalışmasındaki istatistiki tablolardan edindim. Veri setimde Türkiye’deki nüfusun okur-yazar olma, lise veya dengi, yükseköğretim mezunu gibi eğitim durumlarını gösteren değişkenlerle beraber yoksulluk risklerini gösteren yoksul sayıları ve oranları bulunmaktadır. Değişkenlerin isimlerini özet tabloya ve grafiklere aktarmadan önce clean-names fonksiyonu özel karakterleri düzenledim. Sonrasında ise rename with fonksiyonu özel karakterlerde tekrardan bir düzenlemeye giderek değişkenlerde daha sade bir adlandırma yaptım ve özet istatistikleri içeren tabloya aktardım.
 
-Analize ait R kodları bu bölümde başlamalıdır. Bu bölümde veri setini R'a aktaran ve özet istatistikleri üreten kodlar yer almalıdır.
+  Özet istatistiksel tabloya baktığımızda araştırma sorumu da destekleyen veriler bulunmaktadır.  Tablodan eğitim ve yoksulluk arasındaki ilişkide eğitim düzeyi arttıkça yoksul sayısının da düştüğünü görebiliyoruz. Mesela eğitim düzeyinin ilk seviyesi olan illiterate olan okur-yazar olmayanın ile son seviyesi highereducation olan yükseköğretimi kıyaslarsak bu farkı net bir biçimde görebiliyoruz. illiterate4 değişkeninin yoksul sayısıdanki ortalaması 1912 iken highereducation_8 değişkeninin 200. Bu eğitim ve yoksulluk arasındaki ilşkiyi bir kez daha ortaya açıkça koyuyor. Keza yine highschool or equivalent ile literate with no degree değişkenlerini incelediğimizde aynı sonuca ulaşabiliyoruz. 
 
-```{r}
+
+```{r, echo=FALSE} 
 library(tidyverse)
 library(here)
-survey <- read_csv(here("../data/survey.csv"))
+survey <- read_csv("https://raw.githubusercontent.com/muhammedddas/final/main/data/survey.csv")
+
+
+
+
 ```
 
-Rmd dosyasında kod bloklarının bazılarında kod seçeneklerinin düzenlendiğine dikkat edin. 
 
 ```{r, echo=FALSE}
 library(xtable) 
-# devtools::install_github("emraher/summarytools")
+# devtools::install_github("muhammedddas/final")
 library(summarytools)
 st_options(lang = "tr")
 ```
 
-`echo=FALSE` seçeneği ile kodların türetilen pdf dosyasında görünmesini engelleyin ve sonuçlarınızı tablo halinde rapor edin.
 
-```{r results='asis', echo=FALSE}
-survey %>%
-  select("sex", "credits", "handedness", "height", "handspan") %>% 
-  descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>% 
-  xtable(caption = "Özet İstatistikler",
+
+```{r results='asis', echo=FALSE} 
+echo=FALSE
+
+cy <- readr::read_csv("https://raw.githubusercontent.com/muhammedddas/final/main/data/survey.csv")
+
+
+cy <- cy %>% 
+  janitor::clean_names()
+ cy <- cy %>% 
+  rename_with(~str_remove(.x, "_"))
+
+
+
+cy %>%
+  select( "illiterate4" , "literatewith_no_degree_5", "lessthan_high_school","highschool_or_equivalent_7", "highereducation_8", "illiterate10" , "literatewith_no_degree_11" , "lessthan_high_school_2" , "highschool_or_equivalent_13","highereducation_14") %>% 
+ 
+  
+  descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>%
+xtable(caption = "Özet İstatistikler",
          label = "tab:ozet",
          align = c("l", "c", "c", "c", "c", "c")) %>% 
   print(booktabs = TRUE, comment = FALSE, caption.placement = "top")
+
+
 ```
 
 
 # Yöntem ve Veri Analizi
-Bu bölümde veri setindeki bilgileri kullanarak çalışmanın amacına ulaşmak için kullanılacak yöntemleri açıklayın. Derste işlenen/işlenecek olan analiz yöntemlerinden (Hipotez testleri ve korelasyon analizi gibi) çalışmanın amacına ve veri setine uygun olanlar bu bölümde kullanılmalıdır. [@newbold:2003; @ozsoy:2010; @ozsoy:2014]
 
-Örneğin, regresyon analizi gerçekleştiriyorsanız tahmin ettiğiniz denklemi bu bölümde tartışınız. Denklemlerinizi ve matematiksel ifadeleri $LaTeX$ kullanarak yazınız.
+Bu bölümde araştırma konusunu daha net ele alabilmek için grafikler ve analizler yaptım. Öncelikle yoksulluk ile eğitim arasındaki ilişkiyi inceleme üzere yükseköğretim ve okur-yazar olmayanların yoksul sayıları arasındaki ilişkiyi görmek için bu nokta grafiği oluşturdum.. Yükseköğretim yoksul sayıları 200-600 arasında iken okur-yazar olmayanlarda 1500-2500 arasında değişmektedir. Bu da eğitim seviyesinin en yüksek ve en düşük seviyesinde yoksulluk riskini bir ölçüde bize göstermektedir. Daha sonrasında lise altı eğitim ile yükseköğretim değişkenlerinin histogramını oluşturdum. Devamında lise dengi okul ve bir okul bitirmeyenlerin yoksulluk oranları arasında nokta grafiğini oluşturdum. Bununla beraber okur-yazar olmayan ile lise altı eğitimde olanlar arasında çizgi grafiği oluşturdum. Daha sonrasında yükseköğretim ile okur-yazar olmayanların yoksul sayıları arasındaki dağılım, korelasyon ve diğer ilişkileri gösteren bir diyagram oluşturdum. Bu oluşturduğum diyagramlara ve grafiklere baktığımızda eğitim seviyesi ve yoksulluk arasındaki ilişkinin ters yönlü bir ilişki olduğu ortak sonucuna ulaşabiliriz. Devamında bu ilişkiyi daha iyi analiz edebilmek için yükseköğretim ile okur-yazay olmayanların yoksul sayıları arasında regresyon analizine başvurdum ve scoremod fonksiyonu ile özet bir tablo oluşturudum. Regresyon analizi sonucu bulduğum "illiterate4 = 2043.3612 + highereducation_8 . -0.7012" sonuç ile bu ilişkinin yönünü teyit etmiş oldum. 
 
-$$
-Y_t = \beta_0 + \beta_N N_t + \beta_P P_t + \beta_I I_t + \varepsilon_t
-$$
+```{r, echo=FALSE, fig.align='center'}
 
-Bu bölümde analize ilişkin farklı tablolar ve grafiklere yer verilmelidir. Çalışmanıza uygun biçimde histogram, nokta grafiği (Şekil \@ref(fig:plot) gibi), kutu grafiği, vb. grafikleri bu bölüme ekleyiniz. Şekillerinize de gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız.
-
-
-```{r plot, fig.align='center', fig.cap='Muhteşem Bir Grafik'}
-survey %>% 
-  ggplot(aes(x = handedness, y = handspan)) +
-  geom_point() +
+cy %>% 
+ggplot(aes(x =highereducation_8  , y = illiterate4 )) +
+  geom_point(na.rm = TRUE) +
   geom_smooth() +
-  scale_x_continuous("Handedness") + 
-  scale_y_continuous("Handspan")
+  scale_x_continuous("Yükseköğretim yoksul sayısı") + 
+  scale_y_continuous("Okur-yazar olmayan yoksul sayısı ")
+
+ggplot(cy) +
+  aes(x = lessthan_high_school ) +
+  geom_histogram( na.rm = TRUE )
+
+
+cy %>% 
+ggplot(aes(x = highschool_or_equivalent_13  , y = literatewith_no_degree_11)) +
+  geom_point(na.rm = TRUE) +
+  geom_smooth() +
+  scale_x_continuous("Lise ve dengi okul yoksulluk oranı") + 
+  scale_y_continuous("Bir okul bitirmeyen yoksulluk oranı")
+
+
+
+
+ ggplot(cy, aes(x = highereducation_8 )) +
+  geom_histogram( na.rm = TRUE) +
+  scale_x_continuous(name = "highereducation oranı") +
+  scale_y_continuous(name = "illeration oranı") +
+  ggtitle(" Eğitimine göre yoksulluk histogramı")
+
+
+ggplot(cy, aes(x= illiterate10, y=lessthan_high_school_2)) +
+  geom_line()
+
+
+cy %>% 
+  select(illiterate4, highereducation_8) %>% 
+  GGally::ggpairs()
+
+
+
+
+
+
+cy %>%
+  ggplot(aes(x = illiterate10)) +
+  geom_histogram(aes(y = ..density..),
+                 colour = "black", 
+                 fill = "white") +
+  geom_density(alpha = 0.5, 
+               fill = "#71f653") 
+
+
+
+
+
+```
+
+
+          
+```{r results='asis', echo=FALSE}     
+
+cy %>% 
+  ggplot(aes(illiterate4, highereducation_8)) +
+  geom_point() +
+  geom_smooth(method = "lm") 
+
+
+
+score_mod <- lm(illiterate4 ~  highereducation_8 , data = cy)
+summary(score_mod)
+
+
+coefficients <- coef(score_mod)  # Katsayıları al
+intercept <- coefficients[1]  # Sabit (intercept) katsayısını al
+coef_vector <- coefficients[-1]  # Bağımsız değişkenlerin katsayılarını al
+
+independent_vars <- names(coef_vector)  # Bağımsız değişkenlerin isimlerini al
+coef_labels <- paste0(independent_vars, " . " , round(coef_vector, 4))  # Bağımsız değişkenleri katsayılarla birleştir
+
+equation <- paste("illiterate4 =", round(intercept, 4), "+", paste(coef_labels, collapse = " + "))  # Denklemi oluştur
+
+
+
+print(equation)
+
+
+
+
+
+
+
 ```
 
 
 # Sonuç
-Bu bölümde çalışmanızın sonuçlarını özetleyiniz. Sonuçlarınızın başlangıçta belirlediğiniz araştırma sorusuna ne derece cevap verdiğini ve ileride bu çalışmanın nasıl geliştirilebileceğini tartışınız.
+Sonuç olarak projeyi ve yapılan çalışmaları özetlersek eğer başlangıçta sorduğumuz ve araştırmaya çalıştığım yoksulluk ile eğitim seviyesi arasındaki ilişkinin ne tür bir ilişki olduğu sorusuna bu ilişki arasında ters yönlü bir ilişki olduğu sonucuna vardığımı söyleyebilirim. Yani eğitim seviyesi arttıkça yoksulluk riskinin azaldığını söyleyebilirim. Bu çalışmayı desteklemek için Avrupa ülkeleri içinde kıyaslayıp, Avrupa ülkelerindeki sonuçlar ile birlikte bir karşılaştırma yaparak geliştirebiliriz. 
 
-**Kaynakça bölümü Rmarkdown tarafından otomatik olarak oluşturulmaktadır. Taslak dosyada Kaynakça kısmında herhangi bir değişikliğe gerek yoktur.** 
-
-**_Taslakta bu cümleden sonra yer alan hiçbir şey silinmemelidir._**
 
 \newpage
 # Kaynakça {#references}
