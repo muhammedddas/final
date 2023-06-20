@@ -36,7 +36,7 @@ knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FAL
 <!-- ======================================================================= -->
 <!-- ============================== NOTLAR ================================= -->
 <!-- ======================================================================= -->
-[^1]: 20080270, [Github Repo](https://github.com/muhammedddas/deneme.git/muhammedddas/final)
+[^1]: 20080270, [Github Repo](https://github.com/muhammedddas/final)
 
 
 
