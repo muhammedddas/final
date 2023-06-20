@@ -36,7 +36,7 @@ knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FAL
 <!-- ======================================================================= -->
 <!-- ============================== NOTLAR ================================= -->
 <!-- ======================================================================= -->
-[^1]: 20080270, [Github Repo](https://github.com/muhammedddas/final)
+[^1]: 20080270, [Github Repo](https://github.com/muhammedddas/final.git)
 
 
 
@@ -151,6 +151,7 @@ ggplot(cy, aes(x= illiterate10, y=lessthan_high_school_2)) +
   geom_line()
 
 
+      
 cy %>% 
   select(illiterate4, highereducation_8) %>% 
   GGally::ggpairs()
@@ -185,8 +186,13 @@ cy %>%
 
 
 
-score_mod <- lm(illiterate4 ~  highereducation_8 , data = cy)
-summary(score_mod)
+
+
+
+      score_mod <- lm(illiterate4 ~  highereducation_8 , data = cy)
+     summary(score_mod)
+
+
 
 
 coefficients <- coef(score_mod)  # Katsayıları al
